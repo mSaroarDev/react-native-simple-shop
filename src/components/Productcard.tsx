@@ -1,15 +1,16 @@
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { TProduct } from "../types/products.types";
 
-const CARD_WIDTH = (Dimensions.get('window').width / 2) - 20;
+const CARD_WIDTH = (Dimensions.get('window').width / 2) - 18;
 
 type ProductCardProps = {
   data: TProduct
 }
 
 const Productcard = ({
-  data
+  data,
 }: ProductCardProps) => {
+
   return (
     <>
       <View style={styles.productCard}>
@@ -68,6 +69,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#000',
   },
+  productName: {
+    fontSize: 14,
+    color: '#000',
+    fontWeight: '600',
+    marginTop: 5,
+  },
   priceWrapper: {
     display: 'flex',
     flexDirection: 'row',
@@ -76,7 +83,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingBottom: 10,
     width: '100%', 
-  }
+  },
+  productRatings: {
+    fontSize: 12,
+    color: '#000',
+  },
+  productPrice: {
+    fontSize: 16,
+    color: '#ff626a',
+    fontWeight: 'bold',
+  },
 });
 
 export default Productcard;

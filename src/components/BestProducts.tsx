@@ -1,8 +1,12 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import Productcard from "./Productcard";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../../App";
+import { useNavigation } from "@react-navigation/native";
 
 const products = [
   {
+    id: 1,
     productName: "Wireless Bluetooth Headphones",
     price: 59.99,
     ratings: 4.6,
@@ -17,6 +21,7 @@ const products = [
     shopName: "Tech Haven"
   },
   {
+    id: 2,
     productName: "Men’s Running Shoes",
     price: 79.5,
     ratings: 4.3,
@@ -31,6 +36,7 @@ const products = [
     shopName: "Urban Sports"
   },
   {
+    id: 3,
     productName: "Smart LED TV 43 inch",
     price: 329.99,
     ratings: 4.8,
@@ -45,6 +51,7 @@ const products = [
     shopName: "HomeTech Store"
   },
   {
+    id: 4,
     productName: "Leather Office Bag",
     price: 49.0,
     ratings: 4.2,
@@ -59,6 +66,7 @@ const products = [
     shopName: "Elite Fashion"
   },
   {
+    id: 5,
     productName: "Stainless Steel Water Bottle",
     price: 15.99,
     ratings: 4.5,
@@ -73,6 +81,7 @@ const products = [
     shopName: "Eco Living"
   },
   {
+    id: 6,
     productName: "Gaming Mouse RGB",
     price: 39.99,
     ratings: 4.7,
@@ -87,6 +96,7 @@ const products = [
     shopName: "Tech World"
   },
   {
+    id: 7,
     productName: "Smart Fitness Band",
     price: 45.99,
     ratings: 4.4,
@@ -101,6 +111,7 @@ const products = [
     shopName: "Fit Life"
   },
   {
+    id: 8,
     productName: "Cotton T-Shirt",
     price: 19.99,
     ratings: 4.1,
@@ -115,6 +126,7 @@ const products = [
     shopName: "Fashion Hub"
   },
   {
+    id: 9,
     productName: "Laptop Backpack",
     price: 35.0,
     ratings: 4.3,
@@ -129,6 +141,7 @@ const products = [
     shopName: "Office Zone"
   },
   {
+    id: 10,
     productName: "Wireless Keyboard",
     price: 49.99,
     ratings: 4.5,
@@ -143,6 +156,7 @@ const products = [
     shopName: "Tech Haven"
   },
   {
+    id: 11,
     productName: "Ceramic Coffee Mug Set",
     price: 25.99,
     ratings: 4.6,
@@ -157,6 +171,7 @@ const products = [
     shopName: "Kitchen World"
   },
   {
+    id: 12,
     productName: "Bluetooth Speaker",
     price: 69.0,
     ratings: 4.7,
@@ -171,6 +186,7 @@ const products = [
     shopName: "Sound House"
   },
   {
+    id: 13,
     productName: "Women’s Handbag",
     price: 55.99,
     ratings: 4.3,
@@ -185,6 +201,7 @@ const products = [
     shopName: "Style Studio"
   },
   {
+    id: 14,
     productName: "Portable Power Bank 20000mAh",
     price: 35.99,
     ratings: 4.5,
@@ -199,6 +216,7 @@ const products = [
     shopName: "ChargePoint"
   },
   {
+    id: 15,
     productName: "Wireless Earbuds",
     price: 89.99,
     ratings: 4.8,
@@ -213,6 +231,7 @@ const products = [
     shopName: "Audio World"
   },
   {
+    id: 16,
     productName: "Yoga Mat",
     price: 29.99,
     ratings: 4.4,
@@ -227,6 +246,7 @@ const products = [
     shopName: "Fit Life"
   },
   {
+    id: 17,
     productName: "Women’s Denim Jacket",
     price: 69.99,
     ratings: 4.6,
@@ -241,6 +261,7 @@ const products = [
     shopName: "Trendy Wear"
   },
   {
+    id: 18,
     productName: "Stainless Steel Watch",
     price: 119.0,
     ratings: 4.7,
@@ -255,6 +276,7 @@ const products = [
     shopName: "Time Hub"
   },
   {
+    id: 19,
     productName: "Portable Vacuum Cleaner",
     price: 85.99,
     ratings: 4.3,
@@ -269,6 +291,7 @@ const products = [
     shopName: "HomeTech Store"
   },
   {
+    id: 20,
     productName: "Wooden Sunglasses",
     price: 25.99,
     ratings: 4.2,
@@ -284,19 +307,29 @@ const products = [
   }
 ];
 
+type BestProductsProps = NativeStackScreenProps<RootStackParamList, "Home">;
+
 const BestProducts = () => {
+  const navigation = useNavigation<BestProductsProps["navigation"]>();
+
   return (
     <>
       <View style={styles.container}>
         <View style={styles.headingContainer}>
-          <Text style={styles.heading}>BestProducts</Text>
+          <Text style={styles.heading}>Best Products</Text>
           <Text style={styles.filterLabel}>Filters</Text>
         </View>
 
         <FlatList
           data={products}
           keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => <Productcard data={item} />}
+          renderItem={({ item }) => (
+            <Pressable
+              onPress={()=> navigation.navigate('DetailsScreen', {productId: item.id})}
+            >
+              <Productcard data={item} />
+            </Pressable>
+          )}
           numColumns={2}
           contentContainerStyle={styles.productsContainer}
           columnWrapperStyle={styles.row}
@@ -329,7 +362,7 @@ const styles = StyleSheet.create({
     color: '#ff626a',
   },
   productsContainer: {
-    gap: 10,
+    gap: 5,
   },
   row: {
     flex: 1,
