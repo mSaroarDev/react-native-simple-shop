@@ -1,10 +1,11 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import BackComponent from "../components/BackComponent";
 
 const DetailsScreen = () => {
     return (
         <>
           <View>
-            <Text>DetailsScreen</Text>
+            <BackComponent title="Back" />
           </View>
         </>
     );
