@@ -7,17 +7,18 @@ type BackComponentProps = {
 }
 
 const BackComponent = ({ title }: BackComponentProps) => {
-  const { navigate } = useNavigation();
+  const { goBack } = useNavigation();
 
   return (
     <>
       <View style={styles.headingWrapper}>
         <Pressable
-          onPress={() => navigate("Home" as never)}
+          onPress={() => goBack()}
+          style={styles.backButton}
         >
           <Icon name="arrow-left" size={20} color="#000" />
+          <Text style={styles.titleText}>{title}</Text>
         </Pressable>
-        <Text style={styles.titleText}>{title}</Text>
       </View>
     </>
   );
@@ -29,12 +30,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    paddingLeft: 10,
   },
   titleText: {
     fontSize: 16,
     fontWeight: "500",
     color: "#000",
+  },
+  backButton: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
   }
 });
 
