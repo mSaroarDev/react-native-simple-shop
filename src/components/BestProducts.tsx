@@ -4,7 +4,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../App";
 import { useNavigation } from "@react-navigation/native";
 
-const products = [
+export const products = [
   {
     id: 1,
     productName: "Wireless Bluetooth Headphones",
@@ -18,7 +18,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg"],
-    shopName: "Tech Haven"
+    shopName: "Tech Haven",
+    description: "Experience high-quality sound with these wireless Bluetooth headphones. Perfect for music lovers and on-the-go listening."
   },
   {
     id: 2,
@@ -33,7 +34,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg"],
-    shopName: "Urban Sports"
+    shopName: "Urban Sports",
+    description: "Lightweight and comfortable running shoes designed for optimal performance. Ideal for daily runs and workouts."
   },
   {
     id: 3,
@@ -48,7 +50,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: true,
     images: ["https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg"],
-    shopName: "HomeTech Store"
+    shopName: "HomeTech Store",
+    description: "Enjoy vibrant visuals and smart features with this 43-inch LED TV. Stream your favorite shows and movies effortlessly."
   },
   {
     id: 4,
@@ -63,7 +66,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/4812956/pexels-photo-4812956.jpeg"],
-    shopName: "Elite Fashion"
+    shopName: "Elite Fashion",
+    description: "Stylish and durable leather office bag with multiple compartments. Perfect for professionals on the go."
   },
   {
     id: 5,
@@ -78,7 +82,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg"],
-    shopName: "Eco Living"
+    shopName: "Eco Living",
+    description: "Keep your drinks cold or hot for hours with this eco-friendly stainless steel water bottle."
   },
   {
     id: 6,
@@ -93,7 +98,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg"],
-    shopName: "Tech World"
+    shopName: "Tech World",
+    description: "Precision and speed combined with customizable RGB lighting for an immersive gaming experience."
   },
   {
     id: 7,
@@ -108,7 +114,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg"],
-    shopName: "Fit Life"
+    shopName: "Fit Life",
+    description: "Track your daily steps, heart rate, and sleep with this sleek smart fitness band."
   },
   {
     id: 8,
@@ -123,7 +130,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: true,
     images: ["https://images.pexels.com/photos/4812956/pexels-photo-4812956.jpeg"],
-    shopName: "Fashion Hub"
+    shopName: "Fashion Hub",
+    description: "Soft, breathable cotton T-shirt that ensures comfort and style for everyday wear."
   },
   {
     id: 9,
@@ -138,7 +146,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg"],
-    shopName: "Office Zone"
+    shopName: "Office Zone",
+    description: "Spacious and water-resistant laptop backpack perfect for travel, work, and study."
   },
   {
     id: 10,
@@ -153,7 +162,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: true,
     images: ["https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg"],
-    shopName: "Tech Haven"
+    shopName: "Tech Haven",
+    description: "Slim and stylish wireless keyboard with quiet keys for a comfortable typing experience."
   },
   {
     id: 11,
@@ -168,7 +178,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg"],
-    shopName: "Kitchen World"
+    shopName: "Kitchen World",
+    description: "Elegant ceramic coffee mug set perfect for home, office, or gifting occasions."
   },
   {
     id: 12,
@@ -183,7 +194,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/4812956/pexels-photo-4812956.jpeg"],
-    shopName: "Sound House"
+    shopName: "Sound House",
+    description: "Portable Bluetooth speaker with deep bass and long-lasting battery life."
   },
   {
     id: 13,
@@ -198,7 +210,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg"],
-    shopName: "Style Studio"
+    shopName: "Style Studio",
+    description: "Trendy women’s handbag made with premium materials for both style and functionality."
   },
   {
     id: 14,
@@ -213,7 +226,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: true,
     images: ["https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg"],
-    shopName: "ChargePoint"
+    shopName: "ChargePoint",
+    description: "High-capacity power bank with fast charging support for all your devices on the go."
   },
   {
     id: 15,
@@ -228,7 +242,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg"],
-    shopName: "Audio World"
+    shopName: "Audio World",
+    description: "Enjoy crystal-clear sound and noise cancellation with these premium wireless earbuds."
   },
   {
     id: 16,
@@ -243,7 +258,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/4812956/pexels-photo-4812956.jpeg"],
-    shopName: "Fit Life"
+    shopName: "Fit Life",
+    description: "Durable, non-slip yoga mat designed for comfort and stability during workouts."
   },
   {
     id: 17,
@@ -258,7 +274,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg"],
-    shopName: "Trendy Wear"
+    shopName: "Trendy Wear",
+    description: "Classic denim jacket for women that adds a timeless look to any outfit."
   },
   {
     id: 18,
@@ -273,7 +290,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg"],
-    shopName: "Time Hub"
+    shopName: "Time Hub",
+    description: "Elegant stainless steel watch that combines precision with a sophisticated design."
   },
   {
     id: 19,
@@ -288,7 +306,8 @@ const products = [
     isAddedToWishlist: false,
     isAddedToCart: true,
     images: ["https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg"],
-    shopName: "HomeTech Store"
+    shopName: "HomeTech Store",
+    description: "Powerful and compact vacuum cleaner ideal for quick cleanups and car interiors."
   },
   {
     id: 20,
@@ -303,7 +322,8 @@ const products = [
     isAddedToWishlist: true,
     isAddedToCart: false,
     images: ["https://images.pexels.com/photos/4812956/pexels-photo-4812956.jpeg"],
-    shopName: "Sunny Shades"
+    shopName: "Sunny Shades",
+    description: "Eco-friendly wooden sunglasses with UV protection and a stylish, lightweight design."
   }
 ];
 
@@ -325,7 +345,7 @@ const BestProducts = () => {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <Pressable
-              onPress={()=> navigation.navigate('DetailsScreen', {productId: item.id})}
+              onPress={() => navigation.navigate('DetailsScreen', { productId: item.id })}
             >
               <Productcard data={item} />
             </Pressable>

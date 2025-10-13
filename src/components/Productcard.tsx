@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     color: '#ff626a',
     fontWeight: 'bold',
   },
+  
 });
 
 export default Productcard;
